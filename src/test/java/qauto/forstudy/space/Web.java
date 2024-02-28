@@ -14,19 +14,19 @@ import java.net.URL;
 
 public class Web {
 
-    //static WebDriver driver;
-    String gridUrl = "http://192.168.0.126:5555";
-    ChromeOptions options = new ChromeOptions();
-    RemoteWebDriver driver = new RemoteWebDriver(new URL(gridUrl), options);
+    static RemoteWebDriver driver;
+    String gridUrl = "http://192.168.0.109:4444";
 
-    private static final String baseUrl ="https://qauto.forstudy.space/";
+    //private static final String baseUrl ="https://qauto.forstudy.space/";
 
     public Web() throws MalformedURLException {
+        ChromeOptions options = new ChromeOptions();
+        driver = new RemoteWebDriver(new URL(gridUrl), options);
     }
 
-    @BeforeTest
-
-    //public void startBrowser(){ driver = new RemoteWebDriver(); }
+//    @BeforeTest
+//
+//    //public void startBrowser(){ driver = new RemoteWebDriver(); }
 
     @AfterTest
     public void closeBrowser() {

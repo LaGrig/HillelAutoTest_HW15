@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
+import java.net.MalformedURLException;
+
 public class LoginPage extends Web {
 
     private final String guestLoginButton = "//button[contains(text(),'Guest')]";
@@ -21,6 +23,9 @@ public class LoginPage extends Web {
     private final String linkedIn = "//span [@class='socials_icon icon icon-linkedin']";
 
     private WebElement pageTitile;
+
+    public LoginPage() throws MalformedURLException {
+    }
 
     public void checkPageOpens() {
         pageTitile = driver.findElement(By.xpath(pageTitle));

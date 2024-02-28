@@ -2,18 +2,31 @@ package qauto.forstudy.space;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class Web {
 
-    static WebDriver driver;
+    //static WebDriver driver;
+    String gridUrl = "http://192.168.0.126:5555";
+    ChromeOptions options = new ChromeOptions();
+    RemoteWebDriver driver = new RemoteWebDriver(new URL(gridUrl), options);
+
     private static final String baseUrl ="https://qauto.forstudy.space/";
 
+    public Web() throws MalformedURLException {
+    }
+
     @BeforeTest
-    public void startBrowser(){ driver = new ChromeDriver(); }
+
+    //public void startBrowser(){ driver = new RemoteWebDriver(); }
 
     @AfterTest
     public void closeBrowser() {
@@ -24,7 +37,7 @@ public class Web {
     }
 
     @Test
-    public void checkMainPageAccess() throws InterruptedException {
+    public void checkMainPageAccess() throws InterruptedException, MalformedURLException {
         goToFirstPage();
         var loginPage = new LoginPage();
         Thread.sleep(5000);
@@ -32,7 +45,7 @@ public class Web {
     }
 
     @Test
-    public void allElementsArePresentOnPage(){
+    public void allElementsArePresentOnPage() throws MalformedURLException {
         var loginPage = new LoginPage();
         loginPage.elementsOnPageChecker();
         Assert.assertTrue(true);

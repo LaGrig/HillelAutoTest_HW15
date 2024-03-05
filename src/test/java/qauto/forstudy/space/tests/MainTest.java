@@ -9,22 +9,32 @@ import java.net.MalformedURLException;
 
 public class MainTest extends Web {
 
-    public MainTest() throws MalformedURLException {
+    @Test
+    private void checkPageOpens() throws MalformedURLException {
+        var mainPage = new MainPage();
+        Web.driver.get(webUrl);
+        mainPage.checkPageOpens();
     }
 
-    @Test
-    public void checkMainPageAccess() throws InterruptedException, MalformedURLException {
-        goToFirstPage();
-        var loginPage = new MainPage();
-        Thread.sleep(5000);
-        loginPage.checkPageOpens();
-    }
+//    public MainTest() throws MalformedURLException {
+//    }
 
-    @Test
-    public void allElementsArePresentOnPage() throws MalformedURLException {
-        var loginPage = new MainPage();
-        loginPage.elementsOnPageChecker();
-        Assert.assertTrue(true);
-    }
+
+
+
+//    @Test
+//    public void checkMainPageAccess() throws InterruptedException, MalformedURLException {
+//        goToFirstPage();
+//        var loginPage = new MainPage();
+//        Thread.sleep(5000);
+//        loginPage.checkPageOpens();
+//    }
+//
+//    @Test
+//    public void allElementsArePresentOnPage() throws MalformedURLException {
+//        var loginPage = new MainPage();
+//        loginPage.elementsOnPageChecker();
+//        Assert.assertTrue(true);
+//    }
 
 }

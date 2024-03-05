@@ -3,10 +3,11 @@ package qauto.forstudy.space.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import qauto.forstudy.space.webSettings.Web;
 
 import java.net.MalformedURLException;
 
-public class MainPage  {
+public class MainPage extends Web {
 
     private final String guestLoginButton = "//button[contains(text(),'Guest')]";
     private final String userLoginButton = "//button[contains(text(),'Sign In')]";
@@ -15,6 +16,7 @@ public class MainPage  {
     private final String contactsButton = "//button [text()='Contacts']";
     private final String pageTitle = "//h1[contains(text(),'Do more!')]";
 
+
     //social links
     private final String faceBook = "//span [@class='socials_icon icon icon-facebook']";
     private final String telegram = "//span [@class='socials_icon icon icon-telegram']";
@@ -22,14 +24,14 @@ public class MainPage  {
     private final String instagram = "//span [@class='socials_icon icon icon-instagram']";
     private final String linkedIn = "//span [@class='socials_icon icon icon-linkedin']";
 
-    private WebElement pageTitile;
+    //private WebElement pageTitleHeader;
 
     public MainPage() throws MalformedURLException {
     }
 
     public void checkPageOpens() {
-        pageTitile = driver.findElement(By.xpath(pageTitle));
-        pageTitile.isDisplayed();
+        var pageTitleHeader = driver.findElement(By.xpath(pageTitle));
+        pageTitleHeader.isDisplayed();
     }
 
     public void elementsOnPageChecker() {

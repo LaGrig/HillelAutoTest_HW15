@@ -1,4 +1,4 @@
-package qauto.forstudy.space;
+package qauto.forstudy.space.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 import java.net.MalformedURLException;
 
-public class LoginPage extends Web {
+public class MainPage  {
 
     private final String guestLoginButton = "//button[contains(text(),'Guest')]";
     private final String userLoginButton = "//button[contains(text(),'Sign In')]";
@@ -24,7 +24,7 @@ public class LoginPage extends Web {
 
     private WebElement pageTitile;
 
-    public LoginPage() throws MalformedURLException {
+    public MainPage() throws MalformedURLException {
     }
 
     public void checkPageOpens() {
@@ -44,7 +44,7 @@ public class LoginPage extends Web {
             driver.findElement(By.xpath(youTube));
             driver.findElement(By.xpath(instagram));
             driver.findElement(By.xpath(linkedIn));
-        } catch (NoSuchElementException e) {
+        } catch (NoSuchElementException ignored) {
         }
     }
 }

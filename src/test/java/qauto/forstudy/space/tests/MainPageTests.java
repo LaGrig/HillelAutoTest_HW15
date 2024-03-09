@@ -2,20 +2,11 @@ package qauto.forstudy.space.tests;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
-import qauto.forstudy.space.pages.MainPage;
-import qauto.forstudy.space.pages.pageObjects;
-import qauto.forstudy.space.webSettings.Web;
+import qauto.forstudy.space.pages.PageObjects;
 
-import java.net.MalformedURLException;
-import java.time.Duration;
-import java.util.List;
-
-public class MainTest extends pageObjects {
+public class MainPageTests extends PageObjects {
 
     @Test
     public void checkPageOpens_MainPage_1() {

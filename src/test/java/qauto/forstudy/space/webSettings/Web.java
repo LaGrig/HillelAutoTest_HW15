@@ -35,8 +35,10 @@ public class Web {
 //    }
 
     @BeforeTest
-    public void startBrowser(){
-        driver = new FirefoxDriver();
+    public void startBrowser() throws InterruptedException {
+        driver = new ChromeDriver();
+        driver.get(webUrl);
+        //Thread.sleep(5000);
     }
 
     @AfterTest
@@ -44,12 +46,12 @@ public class Web {
         driver.quit();
     }
 
-    @Test
-    public void test1 () {
-        driver.get(webUrl);
-        var title = driver.getTitle();
-        System.out.println(title);
-    }
+//    @Test
+//    public void test1 () {
+//        driver.get(webUrl);
+//        var title = driver.getTitle();
+//        System.out.println(title);
+//    }
 
 //    public void goToFirstPage() {
 //        driver.get("https://guest:welcome2qauto@qauto.forstudy.space/");

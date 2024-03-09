@@ -61,7 +61,7 @@ public class MainTest extends pageObjects {
     }
 
     @Test
-    public void checkSignInButtonLeaadToLogin_MainPage_7 () throws InterruptedException {
+    public void checkSignInButtonLeadToLogin_MainPage_7 () throws InterruptedException {
         driver.findElement((By.xpath(mainPage.getUserLoginButton()))).click();
         WebElement emailField = driver.findElement(By.xpath(mainPage.getSingInEmailField()));
         WebElement passwordField = driver.findElement(By.xpath(mainPage.getSingInPasswordField()));

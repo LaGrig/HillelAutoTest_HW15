@@ -12,24 +12,27 @@ import java.time.Duration;
 import java.util.List;
 
 public class UI_tests extends PageObjects {
-
+    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     //Main page tests
 
     @Test (testName = "Check Main page opens fine")
     public void checkPageOpens_MainPage_1() {
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mainPage.getPageTitle())));
         mainPage.checkPageOpens();
         Assert.assertEquals(driver.getCurrentUrl(), "https://guest:welcome2qauto@qauto.forstudy.space/");
     }
 
     @Test (testName = "Check Main page elements are presents on page")
     public void checkMainPageElementArePresent_MainPage_2() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mainPage.getPageTitle())));
         Assert.assertTrue(mainPage.elementsOnPageChecker());
     }
 
     @Test (testName = "Check Home button works fine")
     public void checkHomeButtonLeadsToRightLocation_MainPage_3() {
-        //driver.get(webUrl);
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mainPage.getPageTitle())));
         driver.findElement(By.xpath(mainPage.getHomeButton())).click();
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(mainPage.getPageTitle())));
         Assert.assertEquals(driver.getCurrentUrl(), "https://guest:welcome2qauto@qauto.forstudy.space/");
     }
 

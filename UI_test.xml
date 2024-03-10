@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.1.dtd" >
-<suite name="UI_test" thread-count="5" parallel="tests">
+<suite name="UI_test" thread-count="1" parallel="tests">
     <test name="QautoUI">
         <classes>
             <class name="qauto.forstudy.space.tests.UI_tests"/>

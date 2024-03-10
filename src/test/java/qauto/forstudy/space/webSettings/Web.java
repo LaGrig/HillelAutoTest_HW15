@@ -35,10 +35,11 @@ public class Web {
 //    }
 
     @BeforeTest
-    public void startBrowser() throws InterruptedException {
-        driver = new ChromeDriver();
+    public void startBrowser(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        driver = new ChromeDriver(options);
         driver.get(webUrl);
-        //Thread.sleep(5000);
     }
 
     @AfterTest

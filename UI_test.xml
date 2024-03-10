@@ -2,7 +2,7 @@
 <suite name="UI_test" thread-count="5" parallel="tests">
     <test name="QautoUI">
         <classes>
-            <class name="qauto.forstudy.space.tests.MainPageTests"/>
+            <class name="qauto.forstudy.space.tests.UI_tests"/>
         </classes>
     </test>
 </suite>

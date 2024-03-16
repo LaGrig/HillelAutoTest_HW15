@@ -56,7 +56,7 @@ public class UI_tests extends PageObjects {
         driver.findElement(By.xpath(mainPage.getGuestLoginButton())).click();
         var currentUrl = driver.getCurrentUrl();
         Assert.assertEquals(currentUrl, "https://guest:welcome2qauto@qauto.forstudy.space/panel/garage");
-        Assert.assertTrue(driver.findElement(By.xpath(guestPage.getLoggedInAsGuestNotifier())).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath(userPage.getLoggedInAsGuestNotifier())).isDisplayed());
     }
 
     @Test (testName = "Check Login button leads to login form")
@@ -104,7 +104,7 @@ public class UI_tests extends PageObjects {
 
     @Test (testName = "Login as User and check all tabs are present")
     public void loginAsUserAndCheckPresentsTabs(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         login();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(userPage.getLoginMessage())));

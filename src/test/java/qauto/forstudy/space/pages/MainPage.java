@@ -85,6 +85,7 @@ public class MainPage extends Web {
     public String getSignUpRePasswordInput() { return signUpRePasswordInput;}
     public String getRegisterButton() { return registerButton;}
 
+    //Error messages on login form
     public String getErrorName() {return errorName; }
 
     public void checkPageOpens() {
